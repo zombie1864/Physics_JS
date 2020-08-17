@@ -11,7 +11,7 @@
 
 # Wireframe 
 
-![Image of wireframe]('./assets/images/wireframe.png')
+![Image of wireframe](/assets/images/wireframe.png)
 
 # Architecture and Technology
 
