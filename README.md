@@ -11,6 +11,8 @@
 
 # Wireframe 
 
+![Image of wireframe]('./assets/images/wireframe.png')
+
 # Architecture and Technology
 
 - the simulation relies on the p5.js library, JS, css, and html to display content to the user. 
