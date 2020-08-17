@@ -9,7 +9,7 @@
   
 //   ellipse(v1.x, v1.y, 50, 50);
 //   ellipse(v2.x, v2.y, 50, 50);
-//   v1.add(v2);
+//   v1.add(v2); // this updates v1. To store the res into a new var - let v3 = p5.Vector.add(v1, v2)
 //   ellipse(v1.x, v1.y, 50, 50);
 // } 
 
@@ -42,11 +42,19 @@
 let inc = 0.01; // these line of code are for line 136
 let start = 0; // these line of code are for line 136
 let walker; 
+let mover; 
+
+let moverA; 
+let moverB; 
 
 function setup() {
-  createCanvas( 400, 400 );
-  walker = new Walker(200, 200); 
+  createCanvas( 800, 800 );
+  // walker = new Walker(200, 200); 
   // background(20, 20, 20); //different effect when bckground is here 
+  mover = new Mover(200, 200); 
+
+  moverA = new Mover(200, 200, 2); 
+  moverB = new Mover(400, 200, 4); 
 }
 
 function draw() {
@@ -216,9 +224,120 @@ function draw() {
 
 
 
-  walker.update(); 
-  walker.show(); 
+  // walker.update(); 
+  // walker.show(); 
 
+  // let pos = createVector(200, 200); 
+  // let mouse = createVector(mouseX, mouseY); 
+
+  // let v = p5.Vector.sub(mouse, pos); 
+
+  // translate(width/2, height/2); 
+  // strokeWeight(4);
+  // stroke(255, 50); 
+  // line(0, 0, v.x, v.y); 
+
+
+  // let pos = createVector(200, 200); 
+  // let mouse = createVector(mouseX, mouseY); 
+
+  // let v = p5.Vector.sub(mouse, pos); 
+  // let mag = v.mag(); 
+  // console.log(mag);
+
+  // translate(width/2, height/2); 
+  // strokeWeight(4);
+  // stroke(255, 50); 
+  // line(0, 0, v.x, v.y);   
+
+
+
+  // let pos = createVector(200, 200); 
+  // let mouse = createVector(mouseX, mouseY); 
+
+  // let v = p5.Vector.sub(mouse, pos); 
+  // let mag = v.mag(); 
+  // background(mag)
+  // console.log(mag);
+
+  // translate(width/2, height/2); 
+  // strokeWeight(4);
+  // stroke(255, 50); 
+  // line(0, 0, v.x, v.y); 
+
+  // let pos = createVector(200, 200); 
+  // let mouse = createVector(mouseX, mouseY); 
+
+  // let v = p5.Vector.sub(mouse, pos); 
+  // let mag = v.mag(); 
+  // v.div(mag); // normalized vector 
+  // v.mult(50); 
+
+  // translate(width/2, height/2); 
+  // strokeWeight(4);
+  // stroke(255); 
+  // line(0, 0, v.x, v.y); 
+
+
+
+  // let pos = createVector(200, 200); 
+  // let mouse = createVector(mouseX, mouseY); 
+
+  // let v = p5.Vector.sub(mouse, pos); 
+  // v.normalize(); 
+  // v.mult(50); 
+
+  // translate(width/2, height/2); 
+  // strokeWeight(4);
+  // stroke(255); 
+  // line(0, 0, v.x, v.y); 
+
+
+  // let pos = createVector(200, 200); 
+  // let mouse = createVector(mouseX, mouseY); 
+
+  // let v = p5.Vector.sub(mouse, pos); 
+  // v.setMag(50); 
+
+  // translate(width/2, height/2); 
+  // strokeWeight(4);
+  // stroke(255); 
+  // line(0, 0, v.x, v.y); 
+
+
+  // mover.update(); 
+  // mover.show(); 
+
+
+  // let gravity = createVector(0, 1); 
+  // mover.applyForce(gravity); 
+  // mover.update(); 
+  // mover.show(); 
+  // mover.edges(); 
+
+  // if (mouseIsPressed) {
+  //   let gravity = createVector(0, 1); 
+  //   mover.applyForce(gravity); 
+  // }
+
+  // mover.update(); 
+  // mover.show(); 
+  // mover.edges(); 
+
+  let gravity = createVector(0, 0.2); 
+
+  let weightA = p5.Vector.mult(gravity, moverA.mass)
+  let weightB = p5.Vector.mult(gravity, moverB.mass)
+  moverA.applyForce(weightA); 
+  moverB.applyForce(weightB); 
+
+  moverA.update(); 
+  moverA.show(); 
+  moverA.edges(); 
+
+  moverB.update(); 
+  moverB.show(); 
+  moverB.edges(); 
 
 }  
 
