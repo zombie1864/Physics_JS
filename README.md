@@ -21,6 +21,6 @@
 
 # Implementation Timeline 
 
-- 3 days to research and plan. The first day of planing will devoted to understanding any new technologies required to built project. The second day will continue on learning p5.js and begin prototype phase. The prototype phase will text relevent code that will be needed for the project and discarding others that aren't. The last day will enter final planing - this day is devoted to reviewing all the moving parts that will be needed for all the MVPs and testing each MVP undeo demo circumstances. 
+- 3 days to research and plan. The first day of planing will be devoted to understanding any new technologies required to built project. The second day will continue on learning p5.js and begin prototype phase. The prototype phase will test relevent code that will be needed for the project and discarding others that aren't. The last day will enter final planing - this day is devoted to reviewing all the moving parts that will be needed for all the MVPs and testing each MVP undeo demo circumstances. 
 
 - 2 days to built the MVPs and stylize the webpage. 
