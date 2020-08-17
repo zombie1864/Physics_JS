@@ -1,9 +1,11 @@
 # Physics_JS Background and Overview
 
-- Physics_JS is a user interface experiance for demostating physics simulation. Initial simulation will involve simulating gravitational effects. Later implementation will include other physical phenonemon that the user can simulate and learn more of about the natural world through online simulation. 
+- Physics_JS is a user interface experience for demonstrating physics simulation. Initial simulation will involve simulating gravitational effects. Later implementation will include other physical phenomenon that the user can simulate and learn more of about the natural world through online simulation. 
 
 # MVPs 
-- Multiple particles. User can set the number of particles on the canvas randomly, adjust the dimensions of the convas, and set the mass for all particles. A start button will begin the simulation. Pause, clear, and inspect buttons will be added. Pause - pauses simulation, clear - clears the convas, inspect - inspects gravitational force of any two particles. 
+- Multiple particles. User can set the number of particles on the canvas randomly, adjust the dimensions of the canvas, and set the mass for all particles. 
+
+- Button controls. A start button will begin the simulation. Pause, clear, and inspect buttons will be added. Pause - pauses simulation, clear - clears the canvas, inspect - inspects gravitational force of any two particles. 
 
 - Inspect. The inspector will open up to the side. User selects two particles on the canvas by clicking on any two particles. The gravitational force will then be displayed. 
 
@@ -19,4 +21,4 @@
 
 # Implementation Timeline 
 
-- 3 days to research and plan. 2 days to built the first two mvps. 
+- 3 days to research and plan. 2 days to built the MVPs. 
