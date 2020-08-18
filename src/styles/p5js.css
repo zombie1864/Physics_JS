@@ -1,0 +1,57 @@
+.test1 {
+    background-color: aqua;
+    position: absolute;
+    top: 200px;
+}
+
+.test2 {
+    background-color: aqua;
+    position: absolute;
+    top: 300px;
+}
+
+.test3 {
+    background-color: aqua;
+    position: absolute;
+    top: 400px;
+}
+
+.test4 {
+    background-color: aqua;
+    position: absolute;
+    top: 500px;
+}
+
+.canvas {
+    position: absolute;
+    top: 100px;
+    left: 250px; 
+}
+
+.label1 {
+    color: crimson;
+    position: absolute; 
+    top: 150px; 
+}
+
+
+.label2 {
+    color: crimson;
+    position: absolute; 
+    top: 250px; 
+}
+
+
+.label3 {
+    color: crimson;
+    position: absolute; 
+    top: 350px; 
+}
+
+
+.label4 {
+    color: crimson;
+    position: absolute; 
+    top: 450px; 
+}
+

@@ -47,18 +47,19 @@ let mover;
 let moverA; 
 let moverB; 
 
-function setup() {
-  createCanvas( 800, 800 );
-  // walker = new Walker(200, 200); 
-  // background(20, 20, 20); //different effect when bckground is here 
-  mover = new Mover(200, 200); 
+// function setup() {
+//   createCanvas( 400, 400 );
 
-  moverA = new Mover(200, 200, 2); 
-  moverB = new Mover(400, 200, 4); 
-}
+//   // walker = new Walker(200, 200); 
+//   // background(20, 20, 20); //different effect when bckground is here 
+//   mover = new Mover(200, 200); 
 
-function draw() {
-  background(20, 20, 20);
+//   moverA = new Mover(200, 200, 2); 
+//   moverB = new Mover(400, 200, 4); 
+// }
+
+// function draw() {
+//   background(20, 20, 20);
   // ellipse(200, 200, 24, 24)
 
   // let ranX = random(width)
@@ -324,20 +325,20 @@ function draw() {
   // mover.show(); 
   // mover.edges(); 
 
-  let gravity = createVector(0, 0.2); 
+//   let gravity = createVector(0, 0.2); 
 
-  let weightA = p5.Vector.mult(gravity, moverA.mass)
-  let weightB = p5.Vector.mult(gravity, moverB.mass)
-  moverA.applyForce(weightA); 
-  moverB.applyForce(weightB); 
+//   let weightA = p5.Vector.mult(gravity, moverA.mass)
+//   let weightB = p5.Vector.mult(gravity, moverB.mass)
+//   moverA.applyForce(weightA); 
+//   moverB.applyForce(weightB); 
 
-  moverA.update(); 
-  moverA.show(); 
-  moverA.edges(); 
+//   moverA.update(); 
+//   moverA.show(); 
+//   moverA.edges(); 
 
-  moverB.update(); 
-  moverB.show(); 
-  moverB.edges(); 
+//   moverB.update(); 
+//   moverB.show(); 
+//   moverB.edges(); 
 
-}  
+// }  
 
