@@ -1,6 +1,6 @@
 let num_of_particles; 
 let particles_mass; 
-// let mover; 
+let movers = []; 
 
 function setup() {
     createCanvas(800, 500).class('canvas');
@@ -9,20 +9,29 @@ function setup() {
     particles_mass = createInput().size(100, 20).class('test2'); 
     canvas_width = createInput().size(100, 20).class('test3'); 
     canvas_height = createInput().size(100, 20).class('test4');
-    mover = new Mover(150, 150, 25)
-    attractor = new Attractor(250, 250, 25)
-    // num_of_particles.changed(newText); 
-    // particles_mass.changed(newText); 
+    
+    for (let i = 0; i < 3; i++) {
+        let x = random(width); 
+        let y = random(height); 
+        let m = random(1, 5); 
+        movers[ i ] = new Mover(x, y, m)
+    }
+    attractor = new Attractor(400, 300, 10)
 }
 
 function draw() {
     background(20, 20, 20);
-    mover.update(); 
-    mover.show(); 
-    attractor.attract(mover);
-    // mover.attract(attractor); 
-    // attraction(mover, attractor); 
-    attractor.show(); 
+    for (let mover of movers) {
+        mover.update(); 
+        mover.show(); 
+        
+        // attractor.update(); 
+        attractor.attract(mover);
+        mover.attract(attractor)
+        attractor.show(); 
+    } 
+
+
 }
 
 // function newText() {

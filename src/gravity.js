@@ -1,8 +1,14 @@
 class Attractor {
     constructor(x, y, m) {
         this.pos = createVector(x, y); 
+        this.vel = p5.Vector.random2D();
+        // this.acc = createVector(random(0, 5), random(0, 5)); 
         this.mass = m; 
-        this.r = sqrt(this.mass)
+        this.r = sqrt(this.mass);
+    }
+
+    applyForce(force) {
+        this.acc = force
     }
 
     attract(mover) {
@@ -16,8 +22,13 @@ class Attractor {
         mover.applyForce(force); 
     }
 
+    update() {        
+        this.vel.add(this.acc); 
+        this.pos.add(this.vel); 
+        // this.acc.set(0,0)
+    }
     show() {
         fill(255); 
-        ellipse(this.pos.x, this.pos.y, this.r*2);
+        ellipse(this.pos.x, this.pos.y, this.r);
     }
 }
