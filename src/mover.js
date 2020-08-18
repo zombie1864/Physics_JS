@@ -2,7 +2,6 @@ class Mover {
     constructor(x, y, m) {
         this.pos = createVector(x, y); 
         this.vel = p5.Vector.random2D();
-        // this.acc = createVector(random(0, 5), random(0, 5)); 
         this.mass = m; 
         this.r = sqrt(this.mass); 
     }
@@ -23,16 +22,17 @@ class Mover {
     }
 
     edges() {
-        if (this.pos.y >= height) {
-            this.pos.y = height; 
+        if (this.pos.y >= height || this.pos.y < 0) {
             this.vel.y *= -1; 
+        } else if (this.pos.x >= width || this.pos.x < 0) {
+            this.vel.x *= -1; 
         }
+
     }
 
     update() {        
         this.vel.add(this.acc); 
         this.pos.add(this.vel); 
-        // this.acc.set(0,0)
     }
 
     show() {
