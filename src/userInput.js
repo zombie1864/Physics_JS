@@ -22,18 +22,18 @@ function updateNum() {
         let y_i = random(height); 
         let m_i = 1; 
         movers[ i ] = new Mover(x_i, y_i, m_i)
-        for ( let j = 0; j < num; j++) {
+        // for ( let j = 1; j < num; j++) {
 
-            let x_j = random(width); 
-            let y_j = random(height); 
-            let m_j = 1; 
-            movers[ j ] = new Mover(x_j, y_j, m_j)
-            // if ( i !== j ) {
-            //     movers[ j ].attract( movers[ i ])
-            //     // movers[ i ].applyForce( force )
-            // }
+        //     let x_j = random(width); 
+        //     let y_j = random(height); 
+        //     let m_j = 1; 
+        //     movers[ j ] = new Mover(x_j, y_j, m_j)
+        //     if ( i !== j ) {
+        //         movers[ j ].attract( movers[ i ])
+        //         movers[ i ].applyForce( force )
+        //     }
 
-        }
+        // }
 
         // movers[ i ].update(); 
         // movers[ i ].show(); 
@@ -49,17 +49,22 @@ function updateMassA() {
 function draw() {
     background(20, 20, 20);
     for (let i = 0; i < movers.length; i++) {
-        movers[ i ].update(); 
-        movers[ i ].show(); 
-        movers[ i ].edges(); 
+        // movers[ i ].update(); 
+        // movers[ i ].show(); 
+        // movers[ i ].edges(); 
         for ( let j = 0; j < movers.length; j++) {
             if ( i !== j ) {
-                movers[ j ].attract(movers[ i ])
+                let force = movers[ j ].attract(movers[ i ])
+                movers[ i ].applyForce(force); 
             }
-            movers[ j ].update(); 
-            movers[ j ].show(); 
-            movers[ j ].edges();
+            // movers[ j ].update(); 
+            // movers[ j ].show(); 
+            // movers[ j ].edges();
         }
+
+        movers[ i ].update(); 
+        movers[ i ].show(); 
+        movers[ i ].edges();
 
         // mover.update(); 
         // mover.show(); 
