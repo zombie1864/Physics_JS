@@ -1,12 +1,14 @@
 class Mover {
     constructor(x, y, m) {
         this.pos = createVector(x, y); 
-        this.vel = p5.Vector.random2D();
+        this.vel = p5.Vector.random2D().mult(random(0, 0.2));
         this.mass = m; 
         this.r = sqrt(this.mass); 
     }
 
     applyForce(force) {
+        // let f = p5.Vector.div(force, this.mass)
+        // this.acc.add(f); 
         this.acc = force
     }
 

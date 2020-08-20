@@ -13,7 +13,7 @@ class Attractor {
     attract(mover) {
         let force = p5.Vector.sub(this.pos, mover.pos); 
         let distanceSq = constrain(force.magSq(), 25, 2500); 
-        let G = 1; 
+        let G = 1.2; 
         let strength = G * (this.mass * mover.mass) / distanceSq;
 
         force.setMag(strength); 
