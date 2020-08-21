@@ -5,7 +5,7 @@ class Mover {
       this.vel = p5.Vector.random2D().mult(random(0, 0.2));
       this.acc = createVector(0, 0);
       this.r = sqrt(this.mass); 
-
+      this.col = color(255); 
     }
   
     applyForce(force) {
@@ -14,8 +14,8 @@ class Mover {
     }
     attract(other) {
         let force = p5.Vector.sub(this.pos, other.pos); 
-        let distanceSq = constrain(force.magSq(), 35, 10000); 
-        let G = 1; 
+        let distanceSq = constrain(force.magSq(), 85, 10000); 
+        let G = 0.04; 
         let strength = G * (this.mass * other.mass) / distanceSq;
         force.setMag(strength); 
         return force
@@ -35,11 +35,25 @@ class Mover {
       this.pos.add(this.vel);
       this.acc.mult(0);
     }
+    
+    changeColor() {
+     this.col = color(random(255), random(255), random(255)); 
+ }
 
     show() {
         stroke(255); 
         strokeWeight(2); 
-        fill(255, 100); 
-        ellipse(this.pos.x, this.pos.y, this.r)
+        fill(this.col); 
+        ellipse(this.pos.x, this.pos.y, this.r * 2)
+    }
+
+
+    intersects(other) {
+        let dis = dist(this.pos.x, this.pos.y, other.pos.x, other.pos.y); 
+        if (dis < this.r + other.r) {
+            return true; 
+        } else {
+            return false; 
+        }
     }
 }
