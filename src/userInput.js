@@ -18,7 +18,7 @@ function setup() {
     canvas_width = createInput().size(100, 20).class('test3'); 
     canvas_width.changed(updateNum)
     canvas_height = createInput().size(100, 20).class('test4');
-    button = createButton('Pause').size(100, 20)2; 
+    button = createButton('Pause').size(100, 20); 
 }
 
     function updateNum() {
