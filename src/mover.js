@@ -15,7 +15,7 @@ class Mover {
     attract(other) {
         let force = p5.Vector.sub(this.pos, other.pos); 
         let distanceSq = constrain(force.magSq(), 85, 10000); 
-        let G = 0.04; 
+        let G = 0.4; 
         let strength = G * (this.mass * other.mass) / distanceSq;
         force.setMag(strength); 
         return force
@@ -38,7 +38,13 @@ class Mover {
     
     changeColor() {
      this.col = color(random(255), random(255), random(255)); 
- }
+    }
+
+    addMass(other) { // THIS NEEDS TO BE WORKED OUT MORE
+        let oldMass = this.mass; 
+        let newMass = oldMass + other.mass; 
+        this.mass = newMass; 
+    }
 
     show() {
         stroke(255); 

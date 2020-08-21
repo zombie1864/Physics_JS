@@ -18,9 +18,10 @@ function setup() {
     canvas_width = createInput().size(100, 20).class('test3'); 
     canvas_width.changed(updateNum)
     canvas_height = createInput().size(100, 20).class('test4');
+    button = createButton('Pause').size(100, 20)2; 
 }
 
-function updateNum() {
+    function updateNum() {
     num = parseInt(num_of_particles.value());
     massA = parseInt(particles_mass.value()); 
     width = parseInt(canvas_width.value()); 
@@ -30,6 +31,7 @@ function updateNum() {
         let m_i = massA; 
         movers[ i ] = new Mover(x_i, y_i, m_i)
     }
+
 }
 
 function draw() {
@@ -49,6 +51,7 @@ function draw() {
             if ( i !== j && movers_i.intersects(movers_j) ) {
                 movers_i.changeColor(); 
                 movers_j.changeColor(); 
+                // movers_i.addMass(movers_j);
             
             }
         }
