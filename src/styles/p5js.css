@@ -1,3 +1,13 @@
+body {
+    background-image: url('https://images.squarespace-cdn.com/content/v1/59fe09580abd04055e1f8257/1512767910354-57MWVOODUAN4YQMAG5T3/ke17ZwdGBToddI8pDm48kPRPfF7iGTQlN_HblE0-rw17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iy8Rj2bPXFyaluz0PeKicNeOG44PLUr71pvuODVcFtV0YIapNWlU5y1sX93YwLcUg/space.jpg?format=2500w');
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+.G_const {
+    position: absolute;
+}
+
 .test1 {
     background-color: aqua;
     position: absolute;
@@ -55,3 +65,114 @@
     top: 450px; 
 }
 
+.Pause {
+    position: relative;
+    padding: 15px;
+    line-height: 1px;
+    text-align: center;
+    color: #2196f3;
+    letter-spacing: 4px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+#pauseButton {
+    position: relative;
+    left: 200px; 
+    top: 500px;
+    width: 80px;
+    height: 40px;
+    padding: 74px;
+    overflow: hidden;
+}
+
+.Pause:hover {
+    color: #255784;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 90px #2196f3;
+    transition-delay: 0.2s;
+}
+#pauseButton, span {
+    position: relative;
+    display: block;
+}
+
+#pauseButton span:nth-child(1) {
+    overflow: hidden;
+    top: 0px;
+    left: -225%;
+    width: 105px; 
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #2196f3);
+}
+#pauseButton:hover span:nth-child(1) {
+    left: 50%;
+    transition: 0.5s; 
+}
+#pauseButton span:nth-child(2) {
+    bottom: -39px;
+    right: -225%;
+    width: 105px; 
+    height: 3px;
+    background: linear-gradient(270deg, transparent, #2196f3);
+}
+#pauseButton:hover span:nth-child(2) {
+    right: 50%;
+    transition: 0.5s; 
+}
+/* ----------------------- */
+.Clear {
+    position: relative;
+    padding: 15px;
+    line-height: 1px;
+    text-align: center;
+    color: #2196f3;
+    letter-spacing: 4px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+#clearButton {
+    position: relative;
+    left: 500px; 
+    top: 312px;
+    width: 80px;
+    height: 40px;
+    padding: 74px;
+    overflow: hidden;
+}
+
+.Clear:hover {
+    color: #fa0b0b;
+    background: #842525;
+    box-shadow: 0 0 10px #842525, 0 0 40px #842525, 0 0 90px #842525;
+    transition-delay: 0.2s;
+}
+#clearButton, span {
+    position: relative;
+    display: block;
+}
+
+#clearButton span:nth-child(1) {
+    overflow: hidden;
+    top: 0px;
+    left: -225%;
+    width: 105px; 
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #842525);
+}
+#clearButton:hover span:nth-child(1) {
+    left: 50%;
+    transition: 0.5s; 
+}
+#clearButton span:nth-child(2) {
+    bottom: -39px;
+    right: -225%;
+    width: 105px; 
+    height: 3px;
+    background: linear-gradient(270deg, transparent, #842525);
+}
+#clearButton:hover span:nth-child(2) {
+    right: 50%;
+    transition: 0.5s; 
+}
