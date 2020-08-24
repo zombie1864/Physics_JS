@@ -2,7 +2,7 @@
   "name": "js_project_skeleton",
   "version": "1.0.0",
   "description": "skeleton for new JS project",
-  "main": "index.js",
+  "main": "index.html",
   "browserslist": [
     "last 1 version",
     "> 1%",

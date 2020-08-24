@@ -8,22 +8,52 @@ let massA = 1;
 let dis; 
 let movers_i; 
 let movers_j; 
+let el; 
+let pauseButton; 
+let clearButton; 
+let play = true; 
 
 function setup() {
-    createCanvas(width, height).class('canvas');
+    el = createCanvas(width, height).class('canvas');
     num_of_particles = createInput().size(100, 20).class('test1');
     num_of_particles.changed(updateNum)
     particles_mass = createInput().size(100, 20).class('test2'); 
     particles_mass.changed(updateNum)
     canvas_width = createInput().size(100, 20).class('test3'); 
     canvas_width.changed(updateNum)
+    canvas_width.changed(updateDim)
     canvas_height = createInput().size(100, 20).class('test4');
-    button = createButton('Pause').size(100, 20); 
+    pauseButton = createButton('Pause').size(100, 20); 
+    if (play) {
+        pauseButton.mousePressed( () => {
+            play = !play; 
+            play ? loop() : noLoop()
+        })
+    }
+    clearButton = createButton('Clear').size(100, 20); 
+    clearButton.mousePressed(() => {
+        movers = [];
+        num = 0; 
+        num_of_particles = createInput().size(100, 20).class('test1'); 
+        particles_mass = createInput().size(100, 20).class('test2');  
+        num_of_particles.changed(updateNum)
+        particles_mass.changed(updateNum)
+    })
+
 }
 
-    function updateNum() {
-    num = parseInt(num_of_particles.value());
-    massA = parseInt(particles_mass.value()); 
+function updateNum() {
+num = parseInt(num_of_particles.value());
+massA = parseInt(particles_mass.value()); 
+    for (let i = 0; i < num; i++) {
+        let x_i = random(width); 
+        let y_i = random(height); 
+        let m_i = massA; 
+        movers[ i ] = new Mover(x_i, y_i, m_i)
+    }
+}
+
+function updateDim() {
     width = parseInt(canvas_width.value()); 
     for (let i = 0; i < num; i++) {
         let x_i = random(width); 
@@ -31,14 +61,14 @@ function setup() {
         let m_i = massA; 
         movers[ i ] = new Mover(x_i, y_i, m_i)
     }
-
 }
 
 function draw() {
-    background(20, 20, 20);
     if (width !== 800 || height !== 500) {
         background(100, 0, 200)
         line(width, 0 , width , height)
+    } else {
+        background(20, 20, 20);
     }
     for (let i = 0; i < movers.length; i++) {
         movers_i = movers[ i ];
