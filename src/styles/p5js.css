@@ -1,11 +1,21 @@
 body {
-    background-image: url('https://images.squarespace-cdn.com/content/v1/59fe09580abd04055e1f8257/1512767910354-57MWVOODUAN4YQMAG5T3/ke17ZwdGBToddI8pDm48kPRPfF7iGTQlN_HblE0-rw17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iy8Rj2bPXFyaluz0PeKicNeOG44PLUr71pvuODVcFtV0YIapNWlU5y1sX93YwLcUg/space.jpg?format=2500w');
-    background-size: auto;
+    /* background-image: url('https://images.squarespace-cdn.com/content/v1/59fe09580abd04055e1f8257/1512767910354-57MWVOODUAN4YQMAG5T3/ke17ZwdGBToddI8pDm48kPRPfF7iGTQlN_HblE0-rw17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iy8Rj2bPXFyaluz0PeKicNeOG44PLUr71pvuODVcFtV0YIapNWlU5y1sX93YwLcUg/space.jpg?format=2500w'); */
+    /* background-image: url('../../assets/images/spacey.png'); */
+    background-image: url('../../assets/images/spacey4.png');
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 .G_const {
     position: absolute;
+    top: 620px;
+    left: 300px; 
+}
+
+.G_const_label {
+    position: absolute;
+    top: 585px;
+    left: 550px; 
 }
 
 .test1 {

@@ -21,7 +21,7 @@ function setup() {
     particles_mass = createInput().size(100, 20).class('test2'); 
     particles_mass.changed(updateNum)
     canvas_width = createInput().size(100, 20).class('test3'); 
-    gravitational_const = createSlider( 0.001, 0.3, G, 0).size(250, 20).class('G_const'); 
+    gravitational_const = createSlider( 0.001, 0.3, G, 0).size(700, 20).class('G_const'); 
     gravitational_const.changed(updateGravity);
     canvas_width.changed(updateDim)
     canvas_height = createInput().size(100, 20).class('test4');
