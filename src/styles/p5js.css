@@ -302,5 +302,22 @@ main {
 
 .instr {
     position: relative;
+    /* left: 7%; */
     padding-left: 100px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    animation: text 3s 1;
+    color: rgb(161, 176, 243);
+}
+
+@keyframes text {
+    0%{
+        color: #14184b;
+        /* color: red; */
+        margin-bottom: -80px;
+    }
+    30%{
+        letter-spacing: 0.7px;
+        margin-bottom: -400px;
+    }
 }
