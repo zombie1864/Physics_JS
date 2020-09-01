@@ -32,7 +32,13 @@ function setup() {
     if (play) {
         pauseButton.mousePressed( () => {
             play = !play; 
-            play ? loop() : noLoop()
+            if ( play ) {
+                pauseButton.html('Pause')
+                loop()
+            } else {  
+                noLoop()
+                pauseButton.html('Play')
+            }
         })
     }
     clearButton = createButton('Clear').size(100, 20).class('Clear'); 
@@ -58,6 +64,8 @@ function updateNum() {
             let m_i = massA; 
             movers[ i ] = new Mover(x_i, y_i, m_i)
         }
+            attractor = new Attractor(width / 2, height / 2, 100)
+
 }
 
 function updateDim() {
@@ -110,6 +118,10 @@ function draw() {
         movers[ i ].update(); 
         movers[ i ].show(); 
         movers[ i ].edges();
+
+        attractor.attract(movers[ i ]);
+        movers[ i ].attract(attractor)
+        attractor.show(); 
     }
     
 } 

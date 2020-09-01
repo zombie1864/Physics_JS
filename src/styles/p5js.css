@@ -108,6 +108,7 @@ body {
     background: #2196f3;
     box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 90px #2196f3;
     transition-delay: 0.2s;
+    cursor: pointer;
 }
 #pauseButton, span {
     position: relative;
@@ -164,6 +165,7 @@ body {
     background: #842525;
     box-shadow: 0 0 10px #842525, 0 0 40px #842525, 0 0 90px #842525;
     transition-delay: 0.2s;
+    cursor: pointer;
 }
 #clearButton, span {
     position: relative;

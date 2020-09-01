@@ -1,7 +1,7 @@
 class Attractor {
     constructor(x, y, m) {
         this.pos = createVector(x, y); 
-        this.vel = p5.Vector.random2D();
+        // this.vel = p5.Vector.random2D();
         this.mass = m; 
         this.r = sqrt(this.mass);
     }
@@ -21,10 +21,10 @@ class Attractor {
         mover.applyForce(force); 
     }
 
-    update() {        
-        this.vel.add(this.acc); 
-        this.pos.add(this.vel); 
-    }
+    // update() {        
+    //     this.vel.add(this.acc); 
+    //     this.pos.add(this.vel); 
+    // }
     show() {
         noStroke()
         fill(255, 0, 100); 
