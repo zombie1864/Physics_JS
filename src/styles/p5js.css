@@ -321,3 +321,99 @@ main {
         margin-bottom: -400px;
     }
 }
+
+ul li {
+    position: relative;
+    list-style: none;
+    /* background: wheat; */
+}
+
+ul li:hover {
+    background: #86ff3b;
+    /* box-shadow: 0 0 10px #5c66ee, 0 0 40px #5c66ee, 0 0 90px #5c66ee; */
+}
+
+ul .label1 .content {
+    position: absolute;
+    /* top: 1px;  */
+    left: 350px;
+    width: 400px; 
+    background: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    /* visibility: hidden; */
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50px);
+}
+
+ul .label1:hover .content {
+    z-index: 1;
+    transition: 2.5s;
+    /* visibility: hidden; */
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+ul .label2 .content {
+    position: absolute;
+    /* top: 1px;  */
+    left: 350px;
+    width: 400px; 
+    background: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    /* visibility: hidden; */
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50px);
+}
+
+ul .label2:hover .content {
+    z-index: 1;
+    transition: 2.5s;
+    /* visibility: hidden; */
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+ul .label3 .content {
+    position: absolute;
+    /* top: 1px;  */
+    left: 350px;
+    width: 400px; 
+    background: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    /* visibility: hidden; */
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50px);
+}
+
+ul .label3:hover .content {
+    z-index: 1;
+    transition: 2.5s;
+    /* visibility: hidden; */
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+ul .label4 .content {
+    position: absolute;
+    /* top: 1px;  */
+    left: 350px;
+    width: 400px; 
+    background: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    /* visibility: hidden; */
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50px);
+}
+
+ul .label4:hover .content {
+    z-index: 1;
+    transition: 2.5s;
+    /* visibility: hidden; */
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}

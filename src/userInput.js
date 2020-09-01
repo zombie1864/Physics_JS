@@ -16,8 +16,11 @@ let G = 0.001;
 
 function setup() {
     createCanvas(width, height).class('canvas');
+    // num_of_particles = createInput().size(100, 20).class('numOfParticles');    
     num_of_particles = createInput().size(100, 20).class('test1');
+    text = createP('HELLO').class('content')
     num_of_particles.changed(updateNum)
+    // num_of_particles.parent('enterParticles');     
     particles_mass = createInput().size(100, 20).class('test2'); 
     particles_mass.changed(updateNum)
     canvas_width = createInput().size(100, 20).class('test3'); 
