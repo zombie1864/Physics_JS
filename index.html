@@ -15,7 +15,6 @@
     </style>
     <script src="./p5.js"></script>
     <script src="./addons/p5.sound.min.js"></script>
-    <script src="./dist/main.js"></script>
   </head>
   
   <body>
@@ -26,12 +25,8 @@
     <script src="./src/userInput.js"></script>
     <script src="./src/mover.js"></script>
     <script src="./src/gravity.js"></script>
-    <h4 class="instr">Instructions - to interact with Physics_JS please enter a number for 'number of particles' and 'mass of particles' and press ENTER. The lights that you see are collision detection. You can also give a number from 200 - 800 for both the width and height of the canvas. Use the slider to adjust the strength of gravity. At anytime you can pause or clear the canvas. </h4>
-    <!-- <div id='enterParticles'>
-      <p class="content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque minus eaque molestiae nulla officia iusto asperiores, non dolor architecto labore quod ad tenetur possimus rerum aspernatur perspiciatis eius mollitia itaque!
-      </p>
-    </div> -->
+    <h4 class="instr">Instructions - to interact with Physics_JS please enter a number for 'number of particles' and 'mass of particles' and press ENTER. Deatils regarding each input can be found by hover your mouse over the text field. The lights that you see are collision detection. You can also give a numbers for both the width and height of the canvas. Use the slider to adjust the strength of gravity. At anytime you can pause or clear the canvas. </h4>
+
     <a id='pauseButton'>
       <span></span>
       <span></span>
@@ -42,10 +37,10 @@
     </a>
     <ul>
       <li class = 'label1'>Number of particles
-        <p class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis ex modi velit ratione quos nemo sit, quasi quae tempore magni dolor, temporibus minus assumenda. Atque repudiandae assumenda unde earum laboriosam?</p>
+        <p class="content">Enter a number between 1 and 200 to see the number of particle interactions </p>
       </li>
       <li class = 'label2'>Mass of particles
-        <p class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis ex modi velit ratione quos nemo sit, quasi quae tempore magni dolor, temporibus minus assumenda. Atque repudiandae assumenda unde earum laboriosam?</p>
+        <p class="content">Enter a number between 1 and 500 to assign mass to each particle </p>
       </li>
       <li class = 'label3'>Set width of canvas
         <p class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis ex modi velit ratione quos nemo sit, quasi quae tempore magni dolor, temporibus minus assumenda. Atque repudiandae assumenda unde earum laboriosam?</p>
@@ -88,7 +83,7 @@
 
         <li class="nav-item">
         </li>
-        <li class="nav-item" id='red'>
+        <li class="nav-item" id='myGit'>
           <a href="#" class="nav-link">
             <svg aria-hidden="true" 
             focusable="false" 
@@ -99,20 +94,25 @@
             <span class="link-text">GitHub</span>
           </a>
           <script type="text/javascript">
-            document.getElementById("red").onclick = function () {
+            document.getElementById("myGit").onclick = function () {
                 location.href = "https://github.com/zombie1864";
             };
         </script>
         </li>
   
-        <li class="nav-item">
+        <li class="nav-item" id="myLinked">
           <a href="#" class="nav-link">
             <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" class="svg-inline--fa fa-linkedin fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" class="fa-primary"></path></svg>
             <span class="link-text">Linkedin</span>
           </a>
+          <script type="text/javascript">
+            document.getElementById("myLinked").onclick = function () {
+                location.href = "https://www.linkedin.com/in/jeff-varela-a3194692/";
+            };
+        </script>
         </li>
   
-        <li class="nav-item">
+        <li class="nav-item" id='myPortfolio'>
           <a href="#" class="nav-link">
             <svg
               aria-hidden="true"
@@ -139,6 +139,11 @@
             </svg>
             <span class="link-text">Portfolio Site</span>
           </a>
+          <script type="text/javascript">
+            document.getElementById("myPortfolio").onclick = function () {
+                location.href = "https://zombie1864.github.io/";
+            };
+        </script>
         </li>
   
         <li class="nav-item">

@@ -15,12 +15,10 @@ let G = 0.001;
 
 
 function setup() {
-    createCanvas(width, height).class('canvas');
-    // num_of_particles = createInput().size(100, 20).class('numOfParticles');    
+    clear(); 
+    createCanvas(width, height).class('canvas'); 
     num_of_particles = createInput().size(100, 20).class('test1');
-    text = createP('HELLO').class('content')
     num_of_particles.changed(updateNum)
-    // num_of_particles.parent('enterParticles');     
     particles_mass = createInput().size(100, 20).class('test2'); 
     particles_mass.changed(updateNum)
     canvas_width = createInput().size(100, 20).class('test3'); 
@@ -50,23 +48,24 @@ function setup() {
 }
 
 function updateNum() {
-num = parseInt(num_of_particles.value());
-massA = parseInt(particles_mass.value()); 
-G = gravitational_const.value(); 
-    for (let i = 0; i < num; i++) {
-        let x_i = random(width); 
-        let y_i = random(height); 
-        let m_i = massA; 
-        movers[ i ] = new Mover(x_i, y_i, m_i)
-    }
+    clear()
+    num = parseInt(num_of_particles.value());
+    massA = parseInt(particles_mass.value()); 
+    G = gravitational_const.value(); 
+        for (let i = 0; i < num; i++) {
+            let x_i = random(20, width - 20); 
+            let y_i = random(20, height - 20); 
+            let m_i = massA; 
+            movers[ i ] = new Mover(x_i, y_i, m_i)
+        }
 }
 
 function updateDim() {
     width = parseInt(canvas_width.value()); 
     height = parseInt(canvas_height.value()); 
     for (let i = 0; i < num; i++) {
-        let x_i = random(width); 
-        let y_i = random(height); 
+        let x_i = random(20, width - 20); 
+        let y_i = random(20, height - 20); 
         let m_i = massA; 
         movers[ i ] = new Mover(x_i, y_i, m_i)
     }
@@ -77,6 +76,7 @@ function updateGravity() {
 }
 
 function draw() {
+    clear()
     if (width !== 800 && height !== 500) {
         background(100, 0, 200)
         line(width, 0 , width , height)
@@ -95,9 +95,17 @@ function draw() {
             if ( i !== j && movers_i.intersects(movers_j) ) {
                 movers_i.changeColor(); 
                 movers_j.changeColor(); 
+                // movers_i.collisionVelChange(movers_j); 
+                // movers_i.collisionVelChange(); 
+                // movers_j.collisionVelChange(); 
                 // movers_i.addMass(movers_j);
-            
+                
             }
+            
+            // if ( i !== j && movers_i.collision(movers_j) ) {
+            //     movers_i.collisionVelChange(); 
+            //     movers_j.collisionVelChange(); 
+            // }
         }
         movers[ i ].update(); 
         movers[ i ].show(); 
