@@ -64,7 +64,7 @@ function updateNum() {
             let m_i = massA; 
             movers[ i ] = new Mover(x_i, y_i, m_i)
         }
-            attractor = new Attractor(width / 2, height / 2, 100)
+            // attractor = new Attractor(width / 2, height / 2, 100)
 
 }
 
@@ -119,9 +119,9 @@ function draw() {
         movers[ i ].show(); 
         movers[ i ].edges();
 
-        attractor.attract(movers[ i ]);
-        movers[ i ].attract(attractor)
-        attractor.show(); 
+        // attractor.attract(movers[ i ]);
+        // movers[ i ].attract(attractor)
+        // attractor.show(); 
     }
     
 } 
