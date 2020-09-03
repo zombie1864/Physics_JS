@@ -55,6 +55,7 @@ function setup() {
         particles_mass.value('')  
         canvas_width.value('')
         canvas_height.value('')
+        gravitational_const.value(0.001)
         attractorStatus = false
     })
     clearButton.parent('clearButton'); 
