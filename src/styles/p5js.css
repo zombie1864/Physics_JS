@@ -1,5 +1,4 @@
 body {
-
     background-image: url('../../assets/images/spacey4.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -10,6 +9,7 @@ body {
     top: -685px;
     left: 75px;
     margin: auto;
+
 }
 
 .G_const_label {
@@ -115,6 +115,8 @@ body {
     height: 40px;
     padding: 74px;
     overflow: hidden;
+    animation-name: button1;
+    animation-duration: 3s;
 }
 
 .Pause:hover {
@@ -173,6 +175,8 @@ body {
     height: 40px;
     padding: 74px;
     overflow: hidden;
+    animation-name: button2;
+    animation-duration: 3s;
 }
 
 .Clear:hover {
@@ -219,25 +223,26 @@ body {
     text-align: center;
     color: #2196f3;
     letter-spacing: 4px;
-    text-decoration: none;
     transition: 0.2s;
 }
 
 #attractorButton {
     position: relative;
     margin: auto;
-    left: 380px; 
+    left: 380px;
     top: 170px;
     width: 80px;
     height: 40px;
     padding: 74px;
     overflow: hidden;
+    animation-name: button3;
+    animation-duration: 3s;
 }
 
 .Attractor:hover {
-    color: #fa0b0b;
-    background: #842525;
-    box-shadow: 0 0 10px #842525, 0 0 40px #842525, 0 0 90px #842525;
+    color: #308002;
+    background: #63fa0b;
+    box-shadow: 0 0 10px #63fa0b, 0 0 40px #63fa0b, 0 0 90px #63fa0b;
     transition-delay: 0.2s;
     cursor: pointer;
 }
@@ -253,7 +258,7 @@ body {
     left: -225%;
     width: 105px; 
     height: 3px;
-    background: linear-gradient(90deg, transparent, #842525);
+    background: linear-gradient(90deg, transparent, #63fa0b);
 }
 #attractorButton:hover span:nth-child(1) {
     left: 50%;
@@ -264,7 +269,7 @@ body {
     right: -225%;
     width: 105px; 
     height: 3px;
-    background: linear-gradient(270deg, transparent, #842525);
+    background: linear-gradient(270deg, transparent, #63fa0b);
 }
 #attractorButton:hover span:nth-child(2) {
     right: 50%;
@@ -382,24 +387,39 @@ main {
 
 .instr {
     position: relative;
-    /* left: 7%; */
     padding-left: 100px;
     font-weight: 600;
     letter-spacing: 0.5px;
-    animation: text 3s 1;
-    color: rgb(161, 176, 243);
+    animation: instrText 3s;
+    /* color: rgb(161, 176, 243); */
+    color: rgb(181, 192, 243);
 }
-/* 
-@keyframes text {
+
+@keyframes instrText {
     0%{
-        color: #14184b;
-        margin-bottom: -80px;
+        /* color: #14184b; */
+        color: #0d0f2c;
     }
     30%{
-        letter-spacing: 0.7px;
-        margin-bottom: -400px;
+        letter-spacing: 0.8px;
     }
-} */
+
+}
+
+@keyframes button1 {
+    from {top: 349px;}
+    to {top: 549px;}
+}
+
+@keyframes button2 {
+    from {top: 159px;}
+    to {top: 360px;}
+}
+
+@keyframes button3 {
+    from {top: -30px;}
+    to {top: 170px;}
+}
 
 ul li {
     position: relative;

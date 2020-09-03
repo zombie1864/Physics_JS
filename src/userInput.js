@@ -55,13 +55,14 @@ function setup() {
         particles_mass.value('')  
         canvas_width.value('')
         canvas_height.value('')
+        attractorStatus = false
     })
     clearButton.parent('clearButton'); 
-    attractorButton = createButton('Attractor').size(100, 20).class('Attractor')
+    attractorButton = createButton('Attractor').size(115, 20).class('Attractor')
     attractorButton.mousePressed( () => {
         attractorStatus = !attractorStatus; 
         if (attractorStatus) 
-        attractor = new Attractor(width / 2, height / 2, 100)
+        attractor = new Attractor(width / 2, height / 2, 60)
     })
     attractorButton.parent('attractorButton'); 
 
