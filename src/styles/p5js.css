@@ -1,20 +1,20 @@
 body {
 
     background-image: url('../../assets/images/spacey4.png');
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
 }
 
 .G_const {
     position: relative;
-    top: -460px;
+    top: -685px;
     left: 75px;
     margin: auto;
 }
 
 .G_const_label {
     position: relative;
-    top: 115px;
+    top: -80px;
     left: 80px;
     margin: auto;
 }
@@ -22,15 +22,15 @@ body {
 .test1 {
     background-color: aqua;
     position: relative;
-    top: -850px;
-    left: -470px;
+    top: -1090px;
+    left: -470px;    
     margin: auto;
 }
 
 .test2 {
     background-color: aqua;
     position: relative;
-    top: -775px;
+    top: -1015px;
     left: -470px;
     margin: auto;
 }
@@ -38,7 +38,7 @@ body {
 .test3 {
     background-color: aqua;
     position: relative;
-    top: -705px;
+    top: -945px;
     left: -470px;
     margin: auto;
 }
@@ -46,53 +46,55 @@ body {
 .test4 {
     background-color: aqua;
     position: relative;
-    top: -650px;
+    top: -870px;
     left: -470px;
     margin: auto;
 }
 
 .canvas {
-    /* position: absolute; */
-    /* top: 100px; */
-    /* left: 260px;  */
     position: relative;
-    top: -415px;
+    top: -615px;
     left: 80px;
     margin: auto;
-    /* display: block; */
-    /* display: flex; */
-    /* align-items: center; */
+}
+
+.labels {
+    position: relative;
+    top: -528px;
+    left: -475px;
+    margin: auto;
 }
 
 .label1 {
     color: crimson;
-    position: absolute; 
-    top: 150px; 
-    left: 100px; 
+    position: relative;
+    /* top: -320px;
+    left: 65px; */
+    margin: auto;
 }
 
 
 .label2 {
     color: crimson;
-    position: absolute; 
-    top: 250px; 
-    left: 100px; 
+    position: relative; 
+    top: 80px; 
+    /* left: 10px;  */
 }
 
 
 .label3 {
     color: crimson;
-    position: absolute; 
-    top: 350px; 
-    left: 100px; 
+    position: relative; 
+    top: 160px; 
+    /* left: 100px;  */
 }
 
 
 .label4 {
     color: crimson;
-    position: absolute; 
-    top: 450px; 
-    left: 100px; 
+    position: relative; 
+    top: 240px; 
+    /* left: 100px;  */
 }
 
 .Pause {
@@ -106,9 +108,9 @@ body {
 
 #pauseButton {
     position: relative;
-    margin: auto;
+    margin: 1px auto;
     left: -250px; 
-    top: 500px;
+    top: 549px;
     width: 80px;
     height: 40px;
     padding: 74px;
@@ -164,9 +166,9 @@ body {
 
 #clearButton {
     position: relative;
-    margin: auto;
-    left: 50px; 
-    top: 312px;
+    margin: 1px auto;
+    left: 60px;
+    top: 360px;
     width: 80px;
     height: 40px;
     padding: 74px;
@@ -208,6 +210,69 @@ body {
     right: 50%;
     transition: 0.5s; 
 }
+
+/* ----------------------- */
+.Attractor {
+    position: relative;
+    padding: 15px;
+    line-height: 1px;
+    text-align: center;
+    color: #2196f3;
+    letter-spacing: 4px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+#attractorButton {
+    position: relative;
+    margin: auto;
+    left: 380px; 
+    top: 170px;
+    width: 80px;
+    height: 40px;
+    padding: 74px;
+    overflow: hidden;
+}
+
+.Attractor:hover {
+    color: #fa0b0b;
+    background: #842525;
+    box-shadow: 0 0 10px #842525, 0 0 40px #842525, 0 0 90px #842525;
+    transition-delay: 0.2s;
+    cursor: pointer;
+}
+
+#attractorButton, span {
+    position: relative;
+    display: block;
+}
+
+#attractorButton span:nth-child(1) {
+    overflow: hidden;
+    top: 0px;
+    left: -225%;
+    width: 105px; 
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #842525);
+}
+#attractorButton:hover span:nth-child(1) {
+    left: 50%;
+    transition: 0.5s; 
+}
+#attractorButton span:nth-child(2) {
+    bottom: -39px;
+    right: -225%;
+    width: 105px; 
+    height: 3px;
+    background: linear-gradient(270deg, transparent, #842525);
+}
+#attractorButton:hover span:nth-child(2) {
+    right: 50%;
+    transition: 0.5s; 
+}
+
+/* ----------------------- */
+
 
 main {
     margin-left: 5rem;

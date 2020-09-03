@@ -12,26 +12,29 @@ let pauseButton;
 let clearButton; 
 let play = true; 
 let G = 0.001; 
+let attractorStatus = false; 
 
 
 function setup() {
-    clear(); 
+    // clear(); 
     createCanvas(width, height).class('canvas'); 
     num_of_particles = createInput().size(100, 20).class('test1');
     num_of_particles.changed(updateNum)
     particles_mass = createInput().size(100, 20).class('test2'); 
     particles_mass.changed(updateNum)
     canvas_width = createInput().size(100, 20).class('test3'); 
-    gravitational_const = createSlider( 0.001, 0.3, G, 0).size(700, 20).class('G_const'); 
-    gravitational_const.changed(updateGravity);
     canvas_width.changed(updateDim)
     canvas_height = createInput().size(100, 20).class('test4');
     canvas_height.changed(updateDim)
+    gravitational_const = createSlider( 0.001, 0.3, G, 0).size(700, 20).class('G_const'); 
+    gravitational_const.changed(updateGravity);
     pauseButton = createButton('Pause').size(100, 20).class('Pause');
     pauseButton.parent('pauseButton')
     if (play) {
         pauseButton.mousePressed( () => {
             play = !play; 
+            
+            // play ? loop() : noLoop()
             if ( play ) {
                 pauseButton.html('Pause')
                 loop()
@@ -45,16 +48,27 @@ function setup() {
     clearButton.mousePressed(() => {
         movers = [];
         num = 0; 
-        num_of_particles = createInput().size(100, 20).class('test1'); 
-        particles_mass = createInput().size(100, 20).class('test2');  
-        num_of_particles.changed(updateNum)
-        particles_mass.changed(updateNum)
+        width = 800; 
+        height = 500; 
+        
+        num_of_particles.value('')
+        particles_mass.value('')  
+        canvas_width.value('')
+        canvas_height.value('')
     })
     clearButton.parent('clearButton'); 
+    attractorButton = createButton('Attractor').size(100, 20).class('Attractor')
+    attractorButton.mousePressed( () => {
+        attractorStatus = !attractorStatus; 
+        if (attractorStatus) 
+        attractor = new Attractor(width / 2, height / 2, 100)
+    })
+    attractorButton.parent('attractorButton'); 
+
 }
 
 function updateNum() {
-    clear()
+    // clear()
     num = parseInt(num_of_particles.value());
     massA = parseInt(particles_mass.value()); 
     G = gravitational_const.value(); 
@@ -64,7 +78,7 @@ function updateNum() {
             let m_i = massA; 
             movers[ i ] = new Mover(x_i, y_i, m_i)
         }
-            // attractor = new Attractor(width / 2, height / 2, 100)
+    // attractor = new Attractor(width / 2, height / 2, 100)
 
 }
 
@@ -84,7 +98,7 @@ function updateGravity() {
 }
 
 function draw() {
-    clear()
+    // clear()
     if (width !== 800 && height !== 500) {
         background(100, 0, 200)
         line(width, 0 , width , height)
@@ -110,19 +124,15 @@ function draw() {
                 
             }
             
-            // if ( i !== j && movers_i.collision(movers_j) ) {
-            //     movers_i.collisionVelChange(); 
-            //     movers_j.collisionVelChange(); 
-            // }
         }
-        movers[ i ].update(); 
-        movers[ i ].show(); 
-        movers[ i ].edges();
+            movers[ i ].update(); 
+            movers[ i ].show(); 
+            movers[ i ].edges();
 
-        // attractor.attract(movers[ i ]);
-        // movers[ i ].attract(attractor)
-        // attractor.show(); 
+            if (attractorStatus) {
+                attractor.attract(movers[ i ]);
+                movers[ i ].attract(attractor)
+                attractor.show(); 
+            }
     }
-    
 } 
-
