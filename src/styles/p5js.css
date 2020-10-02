@@ -2,7 +2,7 @@ body {
     background-image: url('../../assets/images/spacey4.png');
     background-size: contain;
     background-repeat: no-repeat;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #title {
@@ -248,6 +248,20 @@ body {
     letter-spacing: 4px;
     transition: 0.2s;
     
+}
+
+
+#simulateButton {
+    position: relative;
+    margin: 1px auto;
+    /* left: 250px;  */
+    /* top: 549px; */
+    width: 80px;
+    height: 40px;
+    padding: 74px;
+    overflow: hidden;
+    animation-name: button1;
+    animation-duration: 3s;
 }
 
 #pauseButton {

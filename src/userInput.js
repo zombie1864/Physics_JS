@@ -19,22 +19,24 @@ function setup() {
     // clear(); 
     createCanvas(width, height).class('canvas'); 
     num_of_particles = createInput().size(100, 20).class('test1');
-    num_of_particles.changed(updateNum)
     particles_mass = createInput().size(100, 20).class('test2'); 
-    particles_mass.changed(updateNum)
     canvas_width = createInput().size(100, 20).class('test3'); 
     canvas_width.changed(updateDim)
     canvas_height = createInput().size(100, 20).class('test4');
     canvas_height.changed(updateDim)
     gravitational_const = createSlider( 0.001, 0.3, G, 0).size(700, 20).class('G_const'); 
     gravitational_const.changed(updateGravity);
+    simulateButton = createButton('Simulate').size(100, 20).class('Simulate')
+    simulateButton.mousePressed( () => {
+        updateNum()
+    })
+    simulateButton.parent('simulateButton')
     pauseButton = createButton('Pause').size(100, 20).class('Pause');
     pauseButton.parent('pauseButton')
     if (play) {
         pauseButton.mousePressed( () => {
             play = !play; 
             
-            // play ? loop() : noLoop()
             if ( play ) {
                 pauseButton.html('Pause')
                 loop()
@@ -70,9 +72,8 @@ function setup() {
 }
 
 function updateNum() {
-    // clear()
-    num = parseInt(num_of_particles.value());
-    massA = parseInt(particles_mass.value()); 
+    num = num_of_particles.value();
+    massA = particles_mass.value(); 
     G = gravitational_const.value(); 
         for (let i = 0; i < num; i++) {
             let x_i = random(20, width - 20); 
