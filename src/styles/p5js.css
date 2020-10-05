@@ -2,7 +2,7 @@ body {
     background-image: url('../../assets/images/spacey4.png');
     background-size: contain;
     background-repeat: no-repeat;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 #title {
@@ -163,7 +163,7 @@ body {
     margin: auto;
 }
 
-.test1 {
+.num_of_particles {
     background-color: aqua;
     position: relative;
     top: -1090px;
@@ -171,7 +171,7 @@ body {
     margin: auto;
 }
 
-.test2 {
+.particles_mass {
     background-color: aqua;
     position: relative;
     top: -1015px;
@@ -179,18 +179,32 @@ body {
     margin: auto;
 }
 
-.test3 {
+.canvas_width {
     background-color: aqua;
     position: relative;
-    top: -945px;
+    top: -905px;
     left: -470px;
     margin: auto;
 }
 
-.test4 {
+.canvas_height {
     background-color: aqua;
     position: relative;
-    top: -870px;
+    top: -850px;
+    left: -470px;
+    margin: auto;
+}
+
+.Simulate {
+    background-color: rgb(229, 234, 245);
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 15px;
+    line-height: 1px;
+    color: #2196f3;
+    letter-spacing: 4px;
+    position: relative;
+    top: -1060px;
     left: -470px;
     margin: auto;
 }
@@ -212,8 +226,6 @@ body {
 .label1 {
     color: crimson;
     position: relative;
-    /* top: -320px;
-    left: 65px; */
     margin: auto;
 }
 
@@ -229,7 +241,7 @@ body {
 .label3 {
     color: crimson;
     position: relative; 
-    top: 160px; 
+    top: 200px; 
     /* left: 100px;  */
 }
 
@@ -237,7 +249,7 @@ body {
 .label4 {
     color: crimson;
     position: relative; 
-    top: 240px; 
+    top: 260px; 
     /* left: 100px;  */
 }
 
@@ -248,20 +260,6 @@ body {
     letter-spacing: 4px;
     transition: 0.2s;
     
-}
-
-
-#simulateButton {
-    position: relative;
-    margin: 1px auto;
-    /* left: 250px;  */
-    /* top: 549px; */
-    width: 80px;
-    height: 40px;
-    padding: 74px;
-    overflow: hidden;
-    animation-name: button1;
-    animation-duration: 3s;
 }
 
 #pauseButton {

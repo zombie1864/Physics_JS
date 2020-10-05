@@ -18,19 +18,21 @@ let attractorStatus = false;
 function setup() {
     // clear(); 
     createCanvas(width, height).class('canvas'); 
-    num_of_particles = createInput().size(100, 20).class('test1');
-    particles_mass = createInput().size(100, 20).class('test2'); 
-    canvas_width = createInput().size(100, 20).class('test3'); 
+    num_of_particles = createInput().size(100, 20).class('num_of_particles');
+    particles_mass = createInput().size(100, 20).class('particles_mass'); 
+    canvas_width = createInput().size(100, 20).class('canvas_width'); 
     canvas_width.changed(updateDim)
-    canvas_height = createInput().size(100, 20).class('test4');
+    canvas_height = createInput().size(100, 20).class('canvas_height');
     canvas_height.changed(updateDim)
+
     gravitational_const = createSlider( 0.001, 0.3, G, 0).size(700, 20).class('G_const'); 
     gravitational_const.changed(updateGravity);
-    simulateButton = createButton('Simulate').size(100, 20).class('Simulate')
+
+    simulateButton = createButton('Simulate').size(100, 20).class('Simulate').style('width', '110px')
     simulateButton.mousePressed( () => {
         updateNum()
     })
-    simulateButton.parent('simulateButton')
+
     pauseButton = createButton('Pause').size(100, 20).class('Pause');
     pauseButton.parent('pauseButton')
     if (play) {
