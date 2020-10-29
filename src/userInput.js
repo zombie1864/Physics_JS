@@ -14,9 +14,13 @@ let play = true;
 let G = 0.001; 
 let attractorStatus = false; 
 let tx
+let img
 
+// function preload() {
+// }
 
 function setup() { 
+    img = loadImage('spacey.png')
     tx = createP("Instructions - to interact with Physics_JS please enter a number for 'number of particles' and 'mass of particles' and press Simulate. Deatils regarding each input can be found by hover your mouse over the text field. The lights that you see are collision detection. You can also give a numbers for both the width and height of the canvas. Use the slider to adjust the strength of gravity. At anytime you can pause, clear the canvas, or add a central attractor.").class('instr')
     tx.position(0, 0 ).style('left', '50vh').style('top', '20vh')
     createCanvas(width, height).class('canvas'); 
@@ -26,15 +30,15 @@ function setup() {
     canvas_width.changed(updateDim)
     canvas_height = createInput().size(100, 20).class('canvas_height');
     canvas_height.changed(updateDim)
-
+    
     gravitational_const = createSlider( 0.001, 0.3, G, 0).size(700, 20).class('G_const'); 
     gravitational_const.changed(updateGravity);
-
+    
     simulateButton = createButton('Simulate').size(100, 20).class('Simulate').style('width', '110px')
     simulateButton.mousePressed( () => {
         updateNum()
     })
-
+    
     pauseButton = createButton('Pause').size(100, 20).class('Pause');
     pauseButton.parent('pauseButton')
     if (play) {
@@ -72,7 +76,7 @@ function setup() {
         attractor = new Attractor(width / 2, height / 2, 60)
     })
     attractorButton.parent('attractorButton'); 
-
+    
 }
 
 function updateNum() {
@@ -80,14 +84,14 @@ function updateNum() {
     num = num_of_particles.value();
     massA = particles_mass.value(); 
     G = gravitational_const.value(); 
-        for (let i = 0; i < num; i++) {
-            let x_i = random(20, width - 20); 
-            let y_i = random(20, height - 20); 
-            let m_i = massA; 
-            movers[ i ] = new Mover(x_i, y_i, m_i)
-        }
+    for (let i = 0; i < num; i++) {
+        let x_i = random(20, width - 20); 
+        let y_i = random(20, height - 20); 
+        let m_i = massA; 
+        movers[ i ] = new Mover(x_i, y_i, m_i)
+    }
     // attractor = new Attractor(width / 2, height / 2, 100)
-
+    
 }
 
 function updateDim() {
@@ -106,6 +110,7 @@ function updateGravity() {
 }
 
 function draw() {
+    image(img, 0, 0)
     if (width !== 800 && height !== 500) {
         background(100, 0, 200)
         line(width, 0 , width , height)
