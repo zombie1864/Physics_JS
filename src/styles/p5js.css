@@ -7,7 +7,7 @@ body {
 
 #title {
     position: absolute;
-    width: 26%;
+    width: 50vh;
     top: -8%; 
     left: 50%;
     transform: translate(-35%, 40%);
