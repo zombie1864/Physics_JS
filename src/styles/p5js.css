@@ -8,10 +8,9 @@ body {
 #title {
     position: absolute;
     width: 26%;
-    top: 0%; 
+    top: -8%; 
     left: 50%;
     transform: translate(-35%, 40%);
-    /* fill: white; */
     animation: fill 0.5 ease forwards 20s;
 }
 
@@ -542,6 +541,7 @@ main {
 
 .instr {
     position: relative;
+    margin: auto;
     width: 600px;
     font-size: 25px;
     padding-left: 100px;
