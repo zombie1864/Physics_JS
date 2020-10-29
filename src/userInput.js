@@ -20,7 +20,7 @@ let img
 // }
 
 function setup() { 
-    img = loadImage('spacey.png')
+    img = loadImage('https://live.staticflickr.com/65535/50432375936_f2bb6cd8d6_z.jpg')
     tx = createP("Instructions - to interact with Physics_JS please enter a number for 'number of particles' and 'mass of particles' and press Simulate. Deatils regarding each input can be found by hover your mouse over the text field. The lights that you see are collision detection. You can also give a numbers for both the width and height of the canvas. Use the slider to adjust the strength of gravity. At anytime you can pause, clear the canvas, or add a central attractor.").class('instr')
     tx.position(0, 0 ).style('left', '50vh').style('top', '20vh')
     createCanvas(width, height).class('canvas'); 
