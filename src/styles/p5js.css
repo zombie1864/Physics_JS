@@ -542,11 +542,14 @@ main {
 
 .instr {
     position: relative;
+    width: 600px;
+    font-size: 25px;
     padding-left: 100px;
     font-weight: 600;
     letter-spacing: 0.5px;
     animation: instrText 3s;
     color: rgb(181, 192, 243);
+    z-index: 1; 
 }
 
 @keyframes instrText {

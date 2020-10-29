@@ -13,10 +13,12 @@ let clearButton;
 let play = true; 
 let G = 0.001; 
 let attractorStatus = false; 
+let tx
 
 
-function setup() {
-    // clear(); 
+function setup() { 
+    tx = createP("Instructions - to interact with Physics_JS please enter a number for 'number of particles' and 'mass of particles' and press Simulate. Deatils regarding each input can be found by hover your mouse over the text field. The lights that you see are collision detection. You can also give a numbers for both the width and height of the canvas. Use the slider to adjust the strength of gravity. At anytime you can pause, clear the canvas, or add a central attractor.").class('instr')
+    tx.position(330, 100 )
     createCanvas(width, height).class('canvas'); 
     num_of_particles = createInput().size(100, 20).class('num_of_particles');
     particles_mass = createInput().size(100, 20).class('particles_mass'); 
@@ -74,6 +76,7 @@ function setup() {
 }
 
 function updateNum() {
+    tx.style( 'z-index', '-1')
     num = num_of_particles.value();
     massA = particles_mass.value(); 
     G = gravitational_const.value(); 
@@ -103,7 +106,6 @@ function updateGravity() {
 }
 
 function draw() {
-    // clear()
     if (width !== 800 && height !== 500) {
         background(100, 0, 200)
         line(width, 0 , width , height)
