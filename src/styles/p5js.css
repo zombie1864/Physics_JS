@@ -2,7 +2,7 @@ body {
     background-image: url('../../assets/images/spacey4.png');
     background-size: contain;
     background-repeat: no-repeat;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #title {
