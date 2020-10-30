@@ -222,6 +222,7 @@ body {
     top: -528px;
     left: -475px;
     margin: auto;
+    z-index: 2;
 }
 
 .label1 {
