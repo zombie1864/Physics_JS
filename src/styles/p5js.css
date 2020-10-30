@@ -7,10 +7,10 @@ body {
 
 #title {
     position: absolute;
-    width: 50vh;
-    top: -8%; 
-    left: 50%;
-    transform: translate(-35%, 40%);
+    width: 400px;
+    top: -15px; 
+    left: 75vh;
+    /* transform: translate(-35%, 40%); */
     animation: fill 0.5 ease forwards 20s;
 }
 
