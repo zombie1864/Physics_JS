@@ -70,7 +70,7 @@ function setup() {
         attractor = new Attractor(width / 2, height / 2, 60)
     }).parent('attractorButton'); 
     
-    song = loadSound('../assets/music/sound1.mp3', updateNum)
+    // song = loadSound('../assets/music/sound1.mp3', updateNum)
 }
 
 // function loaded() {
