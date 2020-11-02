@@ -64,19 +64,23 @@ function setup() {
         gravitational_const.value(0.001)
         attractorStatus = false
     }).parent('clearButton'); 
+
     attractorButton = createButton('Attractor').size(115, 20).class('Attractor')
     attractorButton.mousePressed( () => {
         attractorStatus = !attractorStatus; 
         if (attractorStatus) 
         attractor = new Attractor(width / 2, height / 2, 60)
-    })
-    attractorButton.parent('attractorButton'); 
+    }).parent('attractorButton'); 
     
 }
 
 function updateNum() {
     tx.style( 'z-index', '-1')
     num = num_of_particles.value();
+    if ( num > 50 ) {
+        alert('Invalid Input'); 
+        num = 10; 
+    }
     massA = particles_mass.value(); 
     G = gravitational_const.value(); 
     for (let i = 0; i < num; i++) {
