@@ -31,6 +31,8 @@ function setup() {
     simulateButton = createButton('Simulate').size(100, 20).class('Simulate').style('width', '110px')
     simulateButton.mousePressed( () => {
         updateNum()
+        song.play();
+        song.setVolume(0.4)
     })
     
     pauseButton = createButton('Pause').size(100, 20).class('Pause');
@@ -41,13 +43,17 @@ function setup() {
             
             if ( play ) {
                 pauseButton.html('Pause')
+                song.play()
                 loop()
             } else {  
                 noLoop()
                 pauseButton.html('Play')
+                song.stop()
             }
+
         })
     }
+
     clearButton = createButton('Clear').size(100, 20).class('Clear'); 
     clearButton.mousePressed(() => {
         movers = [];
@@ -70,12 +76,13 @@ function setup() {
         attractor = new Attractor(width / 2, height / 2, 60)
     }).parent('attractorButton'); 
     
-    // song = loadSound('../assets/music/sound1.mp3', updateNum)
+    // song = loadSound('../assets/music/sound1.mp3', music)
+    song = loadSound('../assets/music/sound1.mp3')
 }
 
-// function loaded() {
+// function music() {
 //     song.play();
-//     song.setVolume(0.4)
+//     song.setVolume(0.4);
 // }
 
 function updateNum() {
@@ -90,8 +97,7 @@ function updateNum() {
         alert('Invalid input: Please enter a number between 1 and 50')
         massA.clear()
     }
-    // song.play();
-    // song.setVolume(0.4)
+
     G = gravitational_const.value(); 
     for (let i = 0; i < num; i++) {
         let x_i = random(20, width - 20); 
@@ -119,7 +125,7 @@ function updateGravity() {
 }
 
 function draw() {
-    // background(random(255)) // did not work 
+    background(random(255)) // did not work 
     if (width !== 800 && height !== 500) {
         background(100, 0, 200)
         line(width, 0 , width , height)
