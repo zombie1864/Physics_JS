@@ -90,8 +90,8 @@ function updateNum() {
         alert('Invalid input: Please enter a number between 1 and 50')
         massA.clear()
     }
-    song.play();
-    song.setVolume(0.4)
+    // song.play();
+    // song.setVolume(0.4)
     G = gravitational_const.value(); 
     for (let i = 0; i < num; i++) {
         let x_i = random(20, width - 20); 
