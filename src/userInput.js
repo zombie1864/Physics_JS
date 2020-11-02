@@ -119,6 +119,7 @@ function updateGravity() {
 }
 
 function draw() {
+    background(random(255))
     if (width !== 800 && height !== 500) {
         background(100, 0, 200)
         line(width, 0 , width , height)
