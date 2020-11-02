@@ -17,16 +17,14 @@ let tx
 
 function setup() { 
     tx = createP("Welcome to Physics_JS - Gravity simulation. Please enter a number for 'number of particles', 'mass of particles' and press Simulate. Deatils regarding each input can be found by hover your mouse over the text field. The lights that you see are collision detection. You can also give a numbers for both the width and height of the canvas. Use the slider to adjust the strength of gravity. At anytime you can pause, clear the canvas, or add a central attractor.").class('instr')
-    tx
     createCanvas(width, height).class('canvas'); 
-
+    
     num_of_particles = createInput().size(100, 20).class('num_of_particles');
     particles_mass = createInput().size(100, 20).class('particles_mass'); 
     canvas_width = createInput().size(100, 20).class('canvas_width'); 
     canvas_width.changed(updateDim)
     canvas_height = createInput().size(100, 20).class('canvas_height');
     canvas_height.changed(updateDim)
-    
     gravitational_const = createSlider( 0.001, 0.3, G, 0).size(700, 20).class('G_const'); 
     gravitational_const.changed(updateGravity);
     
@@ -64,7 +62,7 @@ function setup() {
         gravitational_const.value(0.001)
         attractorStatus = false
     }).parent('clearButton'); 
-
+    
     attractorButton = createButton('Attractor').size(115, 20).class('Attractor')
     attractorButton.mousePressed( () => {
         attractorStatus = !attractorStatus; 
@@ -72,6 +70,12 @@ function setup() {
         attractor = new Attractor(width / 2, height / 2, 60)
     }).parent('attractorButton'); 
     
+    song = loadSound('../assets/music/sound1.mp3', loaded)
+}
+
+function loaded() {
+    song.play();
+    song.setVolume(0.4)
 }
 
 function updateNum() {
@@ -86,6 +90,8 @@ function updateNum() {
         alert('Invalid input: Please enter a number between 1 and 50')
         massA.clear()
     }
+    // song.play();
+    // song.setVolume(0.4)
     G = gravitational_const.value(); 
     for (let i = 0; i < num; i++) {
         let x_i = random(20, width - 20); 
