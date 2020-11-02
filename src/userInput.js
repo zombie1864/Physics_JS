@@ -78,10 +78,14 @@ function updateNum() {
     tx.style( 'z-index', '-1')
     num = num_of_particles.value();
     if ( num > 50 ) {
-        alert('Invalid Input'); 
-        num = 10; 
+        alert('Invalid input: Please enter a number between 1 and 50'); 
+        num.clear()
     }
     massA = particles_mass.value(); 
+    if ( massA > 50 ) {
+        alert('Invalid input: Please enter a number between 1 and 50')
+        massA.clear()
+    }
     G = gravitational_const.value(); 
     for (let i = 0; i < num; i++) {
         let x_i = random(20, width - 20); 
