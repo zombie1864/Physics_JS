@@ -34,7 +34,6 @@ function setup() {
     simulateButton.mousePressed( () => {
         updateNum()
         song.play();
-        song.resume()
         console.log('song should be playing');
         song.setVolume(0.4)
     })
