@@ -34,7 +34,11 @@ function setup() {
     simulateButton.mousePressed( () => {
         updateNum()
         song.play();
-        song.resume();
+        document.querySelector('button').addEventListener('click', function() {
+            context.resume().then(() => {
+              console.log('Playback resumed successfully');
+            });
+          });
         song.setVolume(0.4)
     })
     
