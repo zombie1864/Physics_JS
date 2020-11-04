@@ -22,7 +22,6 @@ function setup() {
     createCanvas(width, height).class('canvas'); 
     
     num_of_particles = createInput().size(100, 20).class('num_of_particles');
-    // console.log(num_of_particles.value().length === 0 );
     particles_mass = createInput().size(100, 20).class('particles_mass'); 
     canvas_width = createInput().size(100, 20).class('canvas_width'); 
     canvas_width.changed(updateDim)
