@@ -34,7 +34,7 @@ function setup() {
     simulateButton.mousePressed( () => {
         updateNum()
         song.play();
-        // song.resume();
+        song.resume();
         song.setVolume(0.4)
     })
     
