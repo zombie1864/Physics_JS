@@ -62,7 +62,8 @@ function setup() {
     }
 
     clearButton = createButton('Clear').size(100, 20).class('Clear'); 
-    clearButton.mousePressed(() => {
+    clearButton.mousePressed( () => {
+        song.stop()
         movers = [];
         num = 0; 
         width = 800; 
