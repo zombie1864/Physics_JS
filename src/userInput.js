@@ -32,7 +32,7 @@ function setup() {
     
     simulateButton = createButton('Simulate').size(100, 20).class('Simulate').style('width', '110px')
     simulateButton.mousePressed( () => {
-        if ( num_of_particles.value().length !== 0 || particles_mass.value().length !== 0 ) {
+        if ( num_of_particles.value().length !== 0 && particles_mass.value().length !== 0 ) {
             updateNum()
             song.play();
             console.log('song should be playing');
