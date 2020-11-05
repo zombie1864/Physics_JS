@@ -16,17 +16,12 @@ let attractorStatus = false;
 let tx
 let song 
 
-// function load() {
-//     song.play()
-// }
-
 function preload() {
     song = loadSound('assets/music/sound1.mp3');
 }
 
 function setup() { 
-    // song = loadSound('assets/music/sound1.mp3');
-    // song = loadSound('assets/music/sound1.mp3', load);
+    
     tx = createP("Welcome to Physics_JS - Gravity simulation. Please enter a number for 'number of particles', 'mass of particles' and press Simulate. Deatils regarding each input can be found by hover your mouse over the text field. The lights that you see are collision detection. You can also give a numbers for both the width and height of the canvas. Use the slider to adjust the strength of gravity. At anytime you can pause, clear the canvas, or add a central attractor.").class('instr')
     createCanvas(width, height).class('canvas'); 
     
