@@ -18,11 +18,12 @@ let attractorStatus = false;
 let tx
 let song 
 
-function preload() {
-    song = loadSound('assets/music/sound1.mp3');
-}
+// function preload() {
+//     song = loadSound('assets/music/sound1.mp3');
+// }
 
 function setup() { 
+    song = loadSound('assets/music/sound1.mp3', loaded);
 
     tx = createP("Welcome to Physics_JS - Gravity simulation. Please enter a number for 'number of particles', 'mass of particles' and press Simulate. Deatils regarding each input can be found by hover your mouse over the text field. The lights that you see are collision detection. You can also give a numbers for both the width and height of the canvas. Use the slider to adjust the strength of gravity. At anytime you can pause, clear the canvas, or add a central attractor.").class('instr')
     createCanvas(width, height).class('canvas'); 
@@ -35,7 +36,7 @@ function setup() {
     canvas_height.changed(updateDim)
     gravitational_const = createSlider( 0.001, 0.3, G, 0).size(700, 20).class('G_const'); 
     gravitational_const.changed(updateGravity);
-
+    
     simulateButton = createButton('Simulate').size(100, 20).class('Simulate').style('width', '110px')
     simulateButton.mousePressed( () => {
         if ( num_of_particles.value().length !== 0 && particles_mass.value().length !== 0 ) {
@@ -51,14 +52,14 @@ function setup() {
     
     pauseButton = createButton('Pause').size(100, 20).class('Pause');
     pauseButton.parent('pauseButton')
-
+    
     if (play) {
         pauseButton.mousePressed( () => {
             if ( !pauseBtnCliked && num_of_particles.value().length === 0 && particles_mass.value().length === 0 ) {
                 return alert('Please input values for both the number of particles and the mass of the particles')
             }
             play = !play; 
-                        
+            
             if ( play && simBtnCliked ) {
                 pauseButton.html('Pause')
                 song.play()
@@ -68,10 +69,10 @@ function setup() {
                 pauseButton.html('Play')
                 song.stop()
             }
-
+            
         })
     }
-
+    
     clearButton = createButton('Clear').size(100, 20).class('Clear'); 
     clearButton.mousePressed( () => {
         song.stop()
@@ -98,11 +99,10 @@ function setup() {
     // song = loadSound('../assets/music/sound1.mp3', music)
 }
 
-// function music() {
-//     song.play();
-//     song.setVolume(0.4);
-// }
-
+function loaded() {
+    // song.play();
+}
+    
 function updateNum() {
     tx.style( 'z-index', '-1')
     num = num_of_particles.value();
@@ -115,7 +115,7 @@ function updateNum() {
         alert('Invalid input: Please enter a number between 1 and 50')
         massA.clear()
     }
-    
+
     G = gravitational_const.value(); 
     for (let i = 0; i < num; i++) {
         let x_i = random(20, width - 20); 
@@ -123,8 +123,8 @@ function updateNum() {
         let m_i = massA; 
         movers[ i ] = new Mover(x_i, y_i, m_i)
     }
-    // attractor = new Attractor(width / 2, height / 2, 100)
-    
+// attractor = new Attractor(width / 2, height / 2, 100)
+
 }
 
 function updateDim() {
