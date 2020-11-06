@@ -18,12 +18,8 @@ let attractorStatus = false;
 let tx
 let song 
 
-// function preload() {
-//     song = loadSound('assets/music/sound1.mp3');
-// }
-
 function setup() { 
-    song = loadSound('assets/music/sound1.mp3', loaded);
+    song = loadSound('assets/music/sound1.mp3');
 
     tx = createP("Welcome to Physics_JS - Gravity simulation. Please enter a number for 'number of particles', 'mass of particles' and press Simulate. Deatils regarding each input can be found by hover your mouse over the text field. The lights that you see are collision detection. You can also give a numbers for both the width and height of the canvas. Use the slider to adjust the strength of gravity. At anytime you can pause, clear the canvas, or add a central attractor.").class('instr')
     createCanvas(width, height).class('canvas'); 
@@ -94,13 +90,7 @@ function setup() {
         attractorStatus = !attractorStatus; 
         if (attractorStatus) 
         attractor = new Attractor(width / 2, height / 2, 60)
-    }).parent('attractorButton'); 
-    
-    // song = loadSound('../assets/music/sound1.mp3', music)
-}
-
-function loaded() {
-    // song.play();
+    }).parent('attractorButton');     
 }
     
 function updateNum() {
@@ -123,8 +113,6 @@ function updateNum() {
         let m_i = massA; 
         movers[ i ] = new Mover(x_i, y_i, m_i)
     }
-// attractor = new Attractor(width / 2, height / 2, 100)
-
 }
 
 function updateDim() {
@@ -162,11 +150,6 @@ function draw() {
             if ( i !== j && movers_i.intersects(movers_j) ) {
                 movers_i.changeColor(); 
                 movers_j.changeColor(); 
-                // movers_i.collisionVelChange(movers_j); 
-                // movers_i.collisionVelChange(); 
-                // movers_j.collisionVelChange(); 
-                // movers_i.addMass(movers_j);
-                
             }
             
         }
