@@ -28,7 +28,7 @@ function setup() {
     canvas_width.changed(updateDim)
     canvas_height = createInput().size(100, 20).class('canvas_height');
     canvas_height.changed(updateDim)
-    gravitational_const = createSlider( 0.001, 0.3, G, 0).size(700, 20).class('G_const'); 
+    gravitational_const = createSlider( 0.001, 0.01, G, 0).size(700, 20).class('G_const'); 
     gravitational_const.changed(updateGravity);
     
     simulateButton = createButton('Simulate').size(100, 20).class('Simulate').style('width', '110px')
@@ -89,7 +89,7 @@ function setup() {
         if (attractorStatus) 
         attractor = new Attractor(width / 2, height / 2, 60)
     }).parent('attractorButton');    
-    
+
     song = loadSound('assets/music/sound1.mp3'); 
 }
     
