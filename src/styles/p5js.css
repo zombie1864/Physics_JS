@@ -467,8 +467,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
 }
+
 .nav-item {
     width: 100%;
 }
@@ -493,9 +493,17 @@ main {
     box-shadow: 0 0 10px #5c66ee, 0 0 40px #5c66ee, 0 0 90px #5c66ee;
 }
 
+.menu {
+    display: none;
+    margin-left: 1rem;
+}
+
+
 .link-text {
     display: none;
     margin-left: 1rem;
+    position: relative;
+    right: 25px;
 }
 
 .nav-link svg {
@@ -504,9 +512,12 @@ main {
 }
 
 .navBar:hover{
-    width: 16rem;
+    width: 9rem;
 }
 
+.navBar:hover .menu {
+    display: block;
+}
 .navBar:hover .link-text {
     display: block;
 }
